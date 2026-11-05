@@ -1,0 +1,10 @@
+{
+  "sha256": {
+    "attack_matrix_raw.csv": "f7fddf6c5ec3538fdc6c14c5b2802e14993569f312b28d92f0e2bf26756e4626",
+    "attack_matrix_summary.csv": "2eed9c9dbfb24badf475bb26650b90bd087ab8558b0dc0de73becdd9badf1f25",
+    "baseline_trials.csv": "6c9d15d35da2c3be112296de2ee136a19a2c6275a92030c26994760daded0ad5",
+    "demo_transcript.txt": "2c6e90fe3a557c446054d4b59df7f522f368c9bc098bf872f18f4dae3d4c7f29",
+    "environment.json": "dafa125bbb6ac4e070f85fccefc0acc02f1cb33f663592f73425c4d816ae4d8e",
+    "main_104_hidden_bits_trials.csv": "f168693a32ae6d51801d120486184b001630c1fcc4597e3a1548f97ff9c391ba"
+  }
+}

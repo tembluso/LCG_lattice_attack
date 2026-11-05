@@ -1,0 +1,20 @@
+# Presentation and speaking materials are submitted separately.
+/presentation/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary files produced by presentation/chart tooling
+.chart-data-*/
+.build/
+*.inspect.ndjson
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*

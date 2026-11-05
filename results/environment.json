@@ -1,0 +1,32 @@
+{
+  "generated_utc": "2026-11-05T05:19:26.269579+00:00",
+  "python_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\msanc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "implementation": "CPython",
+  "state_bits": 128,
+  "modulus": "340282366920938463463374607431768211456",
+  "multiplier": "6364136223846793005",
+  "increment": "1442695040888963407",
+  "experiment_seed": 20261030,
+  "main_visible_bits": 24,
+  "main_hidden_bits": 104,
+  "main_observations": 6,
+  "matrix_visible_bits": [
+    16,
+    24,
+    32,
+    48,
+    64
+  ],
+  "matrix_observations": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "dependencies": "Python standard library only"
+}

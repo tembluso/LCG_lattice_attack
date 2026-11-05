@@ -1,0 +1,16 @@
+RESET-CODE PREDICTION DEMO
+
+Codes observed through the attacker's own account:
+  1: 59c528
+  2: db7bec
+  3: 474e82
+  4: 4cca94
+  5: 1e71c5
+  6: 2d5b60
+
+Prediction committed before victim request: d598b4
+Victim code issued afterward:              d598b4
+Attack successful:                         True
+
+Assumptions: one shared global LCG, public parameters, consecutive outputs,
+and no intervening request between the attacker's final observation and victim.
