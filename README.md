@@ -10,16 +10,61 @@ consecutive outputs are used to recover the internal state with lattice
 reduction and Babai's nearest-plane algorithm. The recovered state then predicts
 a held-out seventh output that was not used during recovery.
 
-All scripts are self-contained, use only the Python standard library, and do
-not import code from one another.
+All cryptanalysis and verification scripts are self-contained, use only the
+Python standard library, and do not import code from one another. The optional
+browser-based presentation demo uses Streamlit and contains its own standalone
+copy of the attack.
 
 ## Requirements
 
 - Python 3.11 or later
-- No third-party packages
+- No third-party packages for the cryptanalysis, experiments, or verification
+- Streamlit only for the optional interactive browser demo
 
 The supplied results were generated with Python 3.14.3 on Windows. The exact
 environment is recorded in [`results/environment.json`](results/environment.json).
+
+## Interactive Streamlit demo
+
+The browser demo presents the attack in four controlled stages: observe six
+codes, recover the hidden states, commit to a prediction, and request the victim
+code. It executes the real LLL/Babai recovery and does not reveal the artificial
+service state to the attacker logic.
+
+Create a virtual environment and install the optional demo dependency:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+Start the app from the repository root:
+
+```powershell
+python -m streamlit run app.py
+```
+
+On macOS or Linux, activate the environment with `source .venv/bin/activate`.
+Streamlit opens the visualizer at `http://localhost:8501`. For a presentation,
+start it before entering slideshow mode and switch directly between PowerPoint
+and the already-open browser window.
+
+The **Run complete attack** button provides a quick check. For the presentation,
+use the four numbered buttons so the prediction remains visibly committed before
+the victim requests a code.
+
+The sidebar also provides four profiles drawn from the saved experiment matrix:
+
+- **Main project:** 24 visible bits, 104 hidden bits, and 6 observations
+- **Medium leakage:** 32 visible bits and 5 observations
+- **Heavy leakage:** 48 visible bits and 3 observations
+- **Low leakage:** 16 visible bits and 9 observations
+
+Every profile achieved 100% recovery in the recorded trials. The low-leakage
+profile uses a nine-dimensional exact LLL reduction and may take roughly 10–15
+seconds depending on the computer. Changing profile resets the staged demo so
+outputs from different configurations are never mixed.
 
 ## Quick demo
 
@@ -116,6 +161,8 @@ python .\code\02_truncated_lcg_project.py all
   standalone lattice attack, experiments, and reset-code demo
 - [`code/03_verify_project.py`](code/03_verify_project.py): regeneration and
   independent artifact verification
+- [`app.py`](app.py): standalone interactive Streamlit attack visualizer
+- [`requirements.txt`](requirements.txt): optional Streamlit dependency
 - [`results/`](results/): raw trials, summaries, demo transcript, environment
   metadata, and integrity manifest
 - [`figures/`](figures/): the recovery-boundary result and an explanatory

@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+.streamlit/secrets.toml
 
 # Temporary files produced by presentation/chart tooling
 .chart-data-*/
